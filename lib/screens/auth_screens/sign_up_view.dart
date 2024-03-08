@@ -41,17 +41,25 @@ class SignUpView extends StatelessWidget {
                       height: 15
                     ),
                     MyTextField(
+                      controller: vm.userNameTextController, 
+                      hintText: "Username", 
+                      obscureText: false
+                    ),
+                    const SizedBox(
+                      height: 15
+                    ),
+                    MyTextField(
                       controller: vm.passwordTextController, 
-                    hintText: "Password", 
-                    obscureText: false
+                      hintText: "Password", 
+                      obscureText: true
                     ),
                     const SizedBox(
                       height: 15
                     ),
                     MyTextField(
                       controller: vm.confirmPasswordTextController, 
-                    hintText: "Confirm", 
-                    obscureText: true
+                      hintText: "Confirm", 
+                      obscureText: true
                     ),
                     const SizedBox(
                       height: 15

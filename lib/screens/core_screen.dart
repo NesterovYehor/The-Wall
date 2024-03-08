@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:the_wall/screens/auth_screens/log_in_view.dart';
 import 'package:the_wall/screens/home_screen/home_view.dart';
 
-class CoreView extends StatelessWidget {
+class CoreView extends StatefulWidget {
   const CoreView({super.key});
 
+  @override
+  State<CoreView> createState() => _CoreViewState();
+}
+
+class _CoreViewState extends State<CoreView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,10 +18,10 @@ class CoreView extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData){
-            return const HomeView();
+            return  HomeView();
           }
           else{
-            return LogInView();
+            return const LogInView();
           }
         },
       ),

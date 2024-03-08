@@ -7,6 +7,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:the_wall/screens/core_screen.dart';
 import 'package:the_wall/screens/home_screen/home_view.dart';
 import 'package:the_wall/screens/home_screen/home_viewmodel.dart';
+import 'package:the_wall/screens/profile_screen/profile_viewmodel.dart';
+import 'package:the_wall/them/dark_theme.dart';
+import 'package:the_wall/them/light_theme.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -25,7 +28,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => AuthViewModel()),
-        ChangeNotifierProvider(create: (context) => HomeViewModel())
+        ChangeNotifierProvider(create: (context) => HomeViewModel()),
+        ChangeNotifierProvider(create: (context) => ProfileViewModel())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -35,6 +39,8 @@ class MyApp extends StatelessWidget {
           '/login' :(context) => LogInView(),
           '/home' :(context) => HomeView(),
         },
+        theme: lightTheme,
+        darkTheme: darkTheme,
       )
     );
   }
